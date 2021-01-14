@@ -234,7 +234,7 @@ final class Customer extends AbstractEntity implements ConvertibleToSDKRequestsI
         $customerRequest->code = $this->getCode();
         $customerRequest->name = $this->getName();
         $customerRequest->email = $this->getEmail();
-        $customerRequest->document = $this->getDocument();
+        $customerRequest->document = preg_replace('/[^0-9]/', '', $this->getDocument();
         $customerRequest->type = $this->getTypeValue();
         $customerRequest->address = $this->getAddressToSDK();
         $customerRequest->phones = $this->getPhonesToSDK();
